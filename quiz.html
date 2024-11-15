@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/tw-elements/css/tw-elements.min.css" />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            fontFamily: {
+                sans: ["Roboto", "sans-serif"],
+                body: ["Roboto", "sans-serif"],
+                mono: ["ui-monospace", "monospace"],
+                poppins: ['Poppins', 'sans-serif'],
+            },
+        },
+        corePlugins: {
+            preflight: false,
+        },
+    };
+    </script>
+    <title>Home</title>
+</head>
+<body class="font-poppins">
+    <header class="container ">
+        <nav class="relative flex w-full flex-wrap items-center justify-between py-2 lg:py-4">
+            <div class="flex w-full flex-wrap items-center justify-between px-3">
+                <div>
+                    <a class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0" href="index.html">
+                        <img
+                        class="me-2"
+                        src="images/logo.svg"
+                        style="height: 20px"
+                        loading="lazy" />
+                    </a>
+                </div>
+                <div>
+                    <button
+                    type="button"
+                    data-twe-ripple-init
+                    data-twe-ripple-color="light"
+                    class="me-3 inline-block rounded px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-[#056EE6] hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 dark:text-secondary-600 dark:hover:text-secondary-500 dark:focus:text-secondary-500 dark:active:text-secondary-500">
+                    Home
+                    </button>
+                    <button
+                    type="button"
+                    data-twe-ripple-init
+                    data-twe-ripple-color="light"
+                    class="me-3 inline-block rounded bg-[#056EE6] px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-lg focus:bg-primary-accent-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-md dark:shadow-black/30 dark:hover:shadow-lg dark:focus:shadow-lg dark:active:shadow-lg">
+                    Start Now
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-8">
+        <div class="mx-auto font-bold block max-w-screen-lg rounded-lg bg-[#D7DEE6] p-6 shadow-4 dark:bg-surface-dark ">
+        <div class="flex justify-between mx-2 mb-2" id="scoreBar">
+            <div class="flex">
+                <p class="mr-3">Score de Question:</p><span id="scoreQS"></span><span>xp</span>
+            </div>
+            <div class="flex">
+                <p class="mr-3">Score Actuelle:</p><span id="scoreActuelle"></span><span>xp</span>
+            </div>
+            
+        </div>
+        <div class="flex justify-between block max-w-5xl rounded-lg bg-white p-6 shadow-4 dark:bg-surface-dark" id="typeBar">
+            <div class="flex">
+                <p class="mr-3 font-bold text-xl">Type :</p><span class="font-bold text-xl" id="type">QCM</span>
+            </div>
+            <div class="flex">
+                <p class="mr-3 font-bold text-xl">Questions:</p><span id="counter"></span><span>/</span> <span class="font-bold text-xl" id="Question-Count"></span>
+            </div>
+            
+        </div>
+        <div class="mx-auto block max-w-5xl mt-4 rounded-lg bg-white p-6 shadow-4 dark:bg-surface-dark">
+            <div>
+                 <h1 class="text-3xl font-extrabold mb-5" id="question-titre"></h1>
+            </div>
+           
+        <!--qcm-->
+        <div class="qcm hidden">
+        <div class="mx-auto block max-w-5xl mt-3 bg-[#D7DEE6] p-6 shadow-4 dark:bg-surface-dark">
+            <input class="relative float-left -ms-[1.5rem] ml-1 me-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-secondary-500 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] rtl:float-right dark:border-neutral-400 dark:checked:border-primary"
+                type="radio"
+                name="flexRadioDefault"
+                id="radioDefault02"
+                 />
+            <label class="labelTXT mt-px text-[#6B6666] font-bold inline-block ps-[0.15rem] hover:cursor-pointer" id="radio1"
+                for="radioDefault02">
+                
+            </label>
+        </div>
+        <div class="mx-auto block max-w-5xl mt-3 bg-[#D7DEE6] p-6 shadow-4 dark:bg-surface-dark">
+            <input
+                    class="relative float-left -ms-[1.5rem] ml-1 me-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-secondary-500 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] rtl:float-right dark:border-neutral-400 dark:checked:border-primary"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="radioDefault01" />
+                <label
+                    class="labelTXT mt-px text-[#6B6666] font-bold inline-block ps-[0.15rem] hover:cursor-pointer" id="radio2"
+                    for="radioDefault01">
+                    
+                </label>
+        </div>
+        <div class="mx-auto block max-w-5xl mt-3 bg-[#D7DEE6] p-6 shadow-4 dark:bg-surface-dark">
+            <input
+                class="relative float-left  -ms-[1.5rem] ml-1 me-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-secondary-500 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] rtl:float-right dark:border-neutral-400 dark:checked:border-primary"
+                type="radio"
+                name="flexRadioDefault"
+                id="radioDefault03" />
+            <label
+                class="labelTXT mt-px text-[#6B6666] font-bold inline-block ps-[0.15rem] hover:cursor-pointer" id="radio3"
+                for="radioDefault03">
+                
+            </label>
+        </div>
+        <div class="mx-auto block max-w-5xl mt-3 bg-[#D7DEE6] p-6 shadow-4 dark:bg-surface-dark">
+            <input
+            class="relative float-left -ms-[1.5rem] ml-1 me-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-secondary-500 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] rtl:float-right dark:border-neutral-400 dark:checked:border-primary"
+            type="radio"
+            name="flexRadioDefault"
+            id="radioDefault04"  />
+          <label
+            class="labelTXT mt-px text-[#6B6666] font-bold inline-block ps-[0.15rem] hover:cursor-pointer" id="radio4"
+            for="radioDefault04">
+            
+          </label>
+        </div>
+    </div>
+        <!--vrai/faux-->
+        <div class="mx-auto block max-w-5xl bg-white p-6 shadow-4 dark:bg-surface-dark hidden" id="vf-content">
+            <p>please click on submit Button first then you have 5sec to choose the answer </p> <br>
+            <button
+            type="button"
+            id="trueBtn"
+            class="inline-block rounded bg-neutral-700 ml-20 mr-5 px-40 pb-5 pt-5 text-xl font-bold uppercase leading-normal text-white shadow-light-3 transition duration-150 ease-in-out hover:bg-neutral-500 hover:shadow-light-2 focus:bg-neutral-200 focus:shadow-light-2 focus:outline-none focus:ring-0 active:bg-neutral-200 active:shadow-light-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
+            true
+            </button>
+            <button
+            type="button"
+            id="falseBtn"
+            class="inline-block rounded bg-neutral-700 px-40 pb-5 pt-5 text-xl font-bold uppercase leading-normal text-neutral-50 shadow-dark-3 transition duration-150 ease-in-out hover:bg-neutral-500 hover:shadow-dark-2 focus:bg-neutral-700 focus:shadow-dark-2 focus:outline-none focus:ring-0 active:bg-neutral-900 active:shadow-dark-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
+            false
+            </button>
+        </div>
+
+        <!--textuelle-->
+        <div class="textdiv mx-auto block max-w-5xl bg-white p-6 shadow-4 dark:bg-surface-dark hidden">
+            <div class="relative mb-3" data-twe-input-wrapper-init>
+                <input
+                  type="text"
+                  class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                  id="exampleFormControlInputText"
+                  placeholder="Example label" />
+                <label
+                  for="exampleFormControlInputText"
+                  class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-400 dark:peer-focus:text-primary"
+                  >Enter Your Answer
+                </label>
+              </div>
+        </div>
+        <!--explic-->
+        <div class="mx-auto block max-w-5xl bg-white p-6 shadow-4 dark:bg-surface-dark hidden" id="dettails-content">
+            <p class="mr-3 font-bold text-xl text-red-500">Explication :</p>
+            <p class="content"></p> 
+        </div>
+        <!--resultat-->
+        <div id="Resultat-content" class="hidden">
+            <h1 class="text-5xl font-bold mb-4 text-[#0D435E] text-center" >Resultat</h1>
+             <div class="mx-auto block max-w-5xl bg-white p-6 shadow-4 dark:bg-surface-dark ">
+            <p class="mr-3 ml-10 mb-2 font-bold text-xl text-[#056EE6]">Bonne Reponses: <span class="text-black" id="bonRepons"></span></p>
+            <p class="mr-3 ml-10 mb-2 font-bold text-xl text-[#056EE6]">Pourcentage: <span class="text-black" id="Pourcentage"></span><span>%</span></p>
+            <p class="mr-3 ml-10 mb-2 font-bold text-xl text-[#056EE6]">Temps total: <span class="text-black" id="temptotal"></span></p> 
+            <p class="mr-3 ml-10 font-bold text-xl text-[#056EE6]">Score total: <span class="text-black" id="scoretotal"></span><span>xp</span></p> 
+            <h1 class="text-3xl font-bold mb-4 text-red-500 text-center" >Question Incorrect</h1>
+            <div class="mx-auto block max-w-5xl bg-[#D7DEE6] p-6 shadow-4 dark:bg-surface-dark " id="Incorrect-content">
+                 
+            </div>
+            <h1 class="text-3xl mt-3 font-bold mb-4 text-green-500 text-center" >Question Correct</h1>
+            <div class="mx-auto block max-w-5xl bg-[#D7DEE6] p-6 shadow-4 dark:bg-surface-dark " id="correct-content">
+                
+            </div>
+        </div>
+        <div class="flex justify-center mt-4">
+            <button
+                type="button"
+                data-twe-ripple-init
+                data-twe-ripple-color="light"
+                id="again"
+                class="me-3 inline-block rounded bg-[#056EE6] px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-lg focus:bg-primary-accent-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-md dark:shadow-black/30 dark:hover:shadow-lg dark:focus:shadow-lg dark:active:shadow-lg">
+                Recommencer
+                </button>
+                <button
+                type="button"
+                data-twe-ripple-init
+                data-twe-ripple-color="light"
+                id="retour"
+                class="me-3 inline-block rounded bg-[#056EE6] px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-lg focus:bg-primary-accent-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-md dark:shadow-black/30 dark:hover:shadow-lg dark:focus:shadow-lg dark:active:shadow-lg">
+                Retour
+                </button>
+                <button
+                type="button"
+                data-twe-ripple-init
+                data-twe-ripple-color="light"
+                class="me-3 inline-block rounded bg-[#056EE6] px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-lg focus:bg-primary-accent-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-md dark:shadow-black/30 dark:hover:shadow-lg dark:focus:shadow-lg dark:active:shadow-lg">
+                Share
+                </button>
+        </div>
+        </div>
+        
+        
+
+
+    </div>
+
+    <div class="bottom-quiz">
+        <button
+        type="button" id="submit-btn"
+        class="mb-2 mt-4 block w-full rounded bg-primary px-6 pb-2 pt-2.5 text-xl font-bold uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
+        Submit Answer
+        </button>
+        <div class="bullets mt-5">
+            <div class="progress">
+               
+            </div>
+            <div class="countdown font-bold">
+                 <span class="seconds"></span>
+            </div>
+        </div>
+    </div>
+      </div>
+    </main>
+
+<footer
+class="flex flex-col items-center mt-20 bg-zinc-50 text-center text-surface dark:bg-neutral-700 dark:text-white">
+<div class="container px-6 pt-6">
+  <div class="mb-6 flex justify-center space-x-2">
+    <a
+      href="#!"
+      type="button"
+      class="rounded-full bg-[#3b5998] p-3 uppercase leading-normal text-white shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 dark:text-white"
+      data-twe-ripple-init
+      data-twe-ripple-color="light">
+      <span class="[&>svg]:h-5 [&>svg]:w-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 320 512">
+          <path
+            d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+        </svg>
+      </span>
+    </a>
+    <a
+      href="#!"
+      type="button"
+      class="rounded-full bg-[#55acee] p-3 uppercase leading-normal text-white shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 dark:text-white"
+      data-twe-ripple-init
+      data-twe-ripple-color="light">
+      <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 512 512">
+         <path
+            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+        </svg>
+      </span>
+    </a>
+    <a
+      href="#!"
+      type="button"
+      class="rounded-full bg-[#dd4b39] p-3 uppercase leading-normal text-white shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 dark:text-white"
+      data-twe-ripple-init
+      data-twe-ripple-color="light">
+      <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 488 512">
+           <path
+            d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
+        </svg>
+      </span>
+    </a>
+    <a
+      href="#!"
+      type="button"
+      class="rounded-full bg-[#ac2bac] p-3 uppercase leading-normal text-white shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 dark:text-white"
+      data-twe-ripple-init
+      data-twe-ripple-color="light">
+      <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 448 512">
+            <path
+            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+        </svg>
+      </span>
+    </a>
+    <a
+      href="#!"
+      type="button"
+      class="rounded-full bg-[#0082ca] p-3 uppercase leading-normal text-white shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 dark:text-white"
+      data-twe-ripple-init
+      data-twe-ripple-color="light">
+      <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 448 512">
+        <path
+            d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+        </svg>
+      </span>
+    </a>
+    <a
+      href="#!"
+      type="button"
+      class="rounded-full bg-[#333333] p-3 uppercase leading-normal text-white shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 dark:text-white"
+      data-twe-ripple-init
+      data-twe-ripple-color="light">
+      <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 496 512">
+          <path
+            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+        </svg>
+      </span>
+    </a>
+  </div>
+</div>
+<div class="w-full bg-[#056EE6] p-4 text-center text-white">
+  © 2024 All Rights Reserved |
+  <a href="https://tw-elements.com/">MassaAlKhayr BadrEddine</a>
+</div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/js/tw-elements.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

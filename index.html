@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/tw-elements/css/tw-elements.min.css" />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            fontFamily: {
+                sans: ["Roboto", "sans-serif"],
+                body: ["Roboto", "sans-serif"],
+                mono: ["ui-monospace", "monospace"],
+                poppins: ['Poppins', 'sans-serif'],
+            },
+        },
+        corePlugins: {
+            preflight: false,
+        },
+    };
+    </script>
+    <title>Home</title>
+</head>
+<body class="font-poppins">
+    <header class="container ">
+        <nav class="relative flex w-full flex-wrap items-center justify-between py-2 lg:py-4">
+            <div class="flex w-full flex-wrap items-center justify-between px-3">
+                <div>
+                    <a class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0" href="#">
+                        <img
+                        class="me-2"
+                        src="images/logo.svg"
+                        style="height: 20px"
+                        loading="lazy" />
+                    </a>
+                </div>
+                <div>
+                    <button
+                    type="submit"
+                    href="quiz.html"
+                    data-twe-ripple-init
+                    data-twe-ripple-color="light"
+                    onclick="window.location.href = 'index.html'"
+                    class="me-3 inline-block rounded px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-[#056EE6] hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 dark:text-secondary-600 dark:hover:text-secondary-500 dark:focus:text-secondary-500 dark:active:text-secondary-500">
+                    Home
+                    </button>
+                    <button
+                    type="button"
+                    data-twe-ripple-init
+                    data-twe-ripple-color="light"
+                    onclick="window.location.href = 'admin.html'"
+                    class="me-3 inline-block rounded bg-[#056EE6] px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-lg focus:bg-primary-accent-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-md dark:shadow-black/30 dark:hover:shadow-lg dark:focus:shadow-lg dark:active:shadow-lg">
+                    Dashboard
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="flex items-center w-full">
+            <div class="w-1/2">
+                <h1 class="text-6xl font-bold mb-5 text-[#0D435E]">Learn new concepts <br>for each question</h1>
+                <p class="mb-4 mt-6 text-xl font-light leading-relaxed">We help you prepare for exams and quizzes. 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Corporis consectetur, error quisquam architecto quasi sed
+                    excepturi est a velit cumque asperiores repellat ut laboriosam 
+                    temporibus consequatur eum molestiae ipsa aut.</p>
+                <button
+                type="button"
+                data-twe-ripple-init
+                data-twe-ripple-color="light"
+                onclick="window.location.href = '#sec-quiz'"
+                class="me-3 inline-block rounded bg-[#056EE6] px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-lg focus:bg-primary-accent-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-md dark:shadow-black/30 dark:hover:shadow-lg dark:focus:shadow-lg dark:active:shadow-lg">
+                Start Quiz
+                </button>
+                <button
+                type="button"
+                data-twe-ripple-init
+                data-twe-ripple-color="light"
+                class="me-3 inline-block rounded px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-[#056EE6] hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 dark:text-secondary-600 dark:hover:text-secondary-500 dark:focus:text-secondary-500 dark:active:text-secondary-500">
+                Know More
+                </button>
+            </div>
+            <div class="w-1/2">
+                <img src="images/bg1.svg" alt="Background image">
+            </div>
+        </div>
+    </main>
+    <section class="container mt-40" id="sec-quiz">
+        <div class="w-full">
+            <div class="flex flex-col items-center">
+                <h1 class="text-5xl font-bold mb-4 text-[#0D435E]" >Our Quizes</h1>
+                <p class="block text-neutral-600 dark:text-neutral-400">Practice make Perfection</p>
+            </div>
+            <div>
+    <ul
+        class="mb-5 flex justify-center mt-20 list-none flex-col flex-wrap ps-0 md:flex-row"
+        id="pills-tab"
+        role="tablist"
+        data-twe-nav-ref>
+        <li role="presentation">
+            <a
+                href="#pills-home"
+                class="my-2 block rounded bg-zinc-100 px-7 pb-3.5 mr-10 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 data-[twe-nav-active]:!bg-[#056EE6] data-[twe-nav-active]:text-white dark:bg-neutral-700 dark:text-white/50 dark:data-[twe-nav-active]:!bg-[#056EE6]"
+                id="pills-home-tab"
+                data-twe-toggle="pill"
+                data-twe-target="#pills-home"
+                data-twe-nav-active
+                role="tab"
+                aria-controls="pills-home"
+                aria-selected="true"
+                >All</a>
+        </li>
+        <li role="presentation">
+            <a
+                href="#pills-profile"
+                class="my-2 block rounded bg-zinc-100 px-7 pb-3.5 mr-10 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 data-[twe-nav-active]:!bg-[#056EE6] data-[twe-nav-active]:text-white dark:bg-neutral-700 dark:text-white/50 dark:data-[twe-nav-active]:!bg-[#056EE6]"
+                id="pills-profile-tab"
+                data-twe-toggle="pill"
+                data-twe-target="#pills-profile"
+                role="tab"
+                aria-controls="pills-profile"
+                aria-selected="false"
+                >Facile</a>
+        </li>
+        <li role="presentation">
+            <a
+                href="#pills-contact"
+                class="my-2 block rounded bg-zinc-100 px-7 pb-3.5 mr-10 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 data-[twe-nav-active]:!bg-[#056EE6] data-[twe-nav-active]:text-white dark:bg-neutral-700 dark:text-white/50 dark:data-[twe-nav-active]:!bg-[#056EE6]"
+                id="pills-contact-tab"
+                data-twe-toggle="pill"
+                data-twe-target="#pills-contact"
+                role="tab"
+                aria-controls="pills-contact"
+                aria-selected="false"
+                >Moyen</a>
+        </li>
+        <li role="presentation">
+            <a
+                href="#pills-disabled"
+                class="my-2 block rounded bg-zinc-100 px-7 pb-3.5 mr-10 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 data-[twe-nav-active]:!bg-[#056EE6] data-[twe-nav-active]:text-white dark:bg-neutral-700 dark:text-white/50 dark:data-[twe-nav-active]:!bg-[#056EE6]"
+                id="pills-disabled-tab"
+                data-twe-toggle="pill"
+                data-twe-target="#pills-disabled"
+                role="tab"
+                aria-controls="pills-disabled"
+                aria-selected="false"
+                >Difficile</a>
+        </li>
+    </ul>
+    <div class="mb-6">
+        <div class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[twe-tab-active]:block"
+            id="pills-home"
+            role="tabpanel"
+            aria-labelledby="pills-home-tab"
+            data-twe-tab-active>
+            <div class="flex flex-wrap justify-center mt-10" id="cards-container">
+                <!-- <div class="card-quiz flex flex-col mr-20 mb-10  rounded-lg bg-[#292C34] text-white shadow-secondary-1 dark:bg-surface-dark dark:text-white md:max-w-xl md:flex-row" data-title="Quiz sur JavaScript de base">
+                    <img
+                        class="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:!rounded-none md:!rounded-s-lg"
+                        src="images/card-img.svg"
+                        alt="" />
+                    <div class="flex flex-col justify-start p-6">
+                        <h5 class="mb-2 text-xl font-medium">Quiz sur JavaScript de base</h5>
+                        <p class="mb-4 text-base">
+                        This is a wider card with supporting text below as Homepage de um portal de notícias sobre a área de tecnologia                    .
+                        </p>
+                        <p class="text-xs text-white/75 dark:text-neutral-300">
+                            Question(s): 10
+                        </p>
+                        <p class="text-xs text-white/75 dark:text-neutral-300">
+                            Temp: 5min
+                        </p>
+                        <p class="text-xs text-white/75 dark:text-neutral-300">
+                            Difficulté: Moyen
+                        </p>
+                        <div class="flex justify-end mt-4">
+                           <a href="quiz.html">
+                            <button
+                                type="button"
+                                href="quiz.html"
+                                class="inline-block rounded bg-[#056EE6] px-4 pb-2 pt-2 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                data-twe-ripple-init
+                                data-twe-ripple-color="light">
+                                Select
+                            </button>
+                           </a> 
+                        </div>
+                    </div>
+                    </div>
+    
+                    <div class="card-quiz flex flex-col mr-20 mb-10 rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white md:max-w-xl md:flex-row" data-title="Quiz avancé sur JavaScript">
+                        <img
+                            class="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:!rounded-none md:!rounded-s-lg"
+                            src="images/card-img.svg"
+                            alt="" />
+                        <div class="flex flex-col justify-start p-6">
+                            <h5 class="mb-2 text-xl font-medium">Quiz avancé sur JavaScript</h5>
+                            <p class="mb-4 text-base">
+                            This is a wider card with supporting text below as Homepage de um portal de notícias sobre a área de tecnologia                    .
+                            </p>
+                            <p class="text-xs text-surface/75 dark:text-neutral-300">
+                                Question(s): 10
+                            </p>
+                            <p class="text-xs text-surface/75 dark:text-neutral-300">
+                                Temp: 5min
+                            </p>
+                            <p class="text-xs text-surface/75 dark:text-neutral-300">
+                                Difficulté: Moyen
+                            </p>
+                            <div class="flex justify-end mt-4">
+                                <button
+                                    type="button"
+                                    href="quiz.html"
+                                    class="inline-block rounded bg-[#056EE6] px-4 pb-2 pt-2 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                    data-twe-ripple-init
+                                    data-twe-ripple-color="light">
+                                    Select
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+    
+                        <div class="card-quiz flex flex-col mr-20 mb-10 rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white md:max-w-xl md:flex-row" data-title="Quiz de programmation générale">
+                            <img
+                                class="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:!rounded-none md:!rounded-s-lg"
+                                src="images/card-img.svg"
+                                alt="" />
+                            <div class="flex flex-col justify-start p-6">
+                                <h5 class="mb-2 text-xl font-medium" >Quiz de programmation générale</h5>
+                                <p class="mb-4 text-base">
+                                This is a wider card with supporting text below as Homepage de um portal de notícias sobre a área de tecnologia                    .
+                                </p>
+                                <p class="text-xs text-surface/75 dark:text-neutral-300">
+                                    Question(s): 10
+                                </p>
+                                <p class="text-xs text-surface/75 dark:text-neutral-300">
+                                    Temp: 5min
+                                </p>
+                                <p class="text-xs text-surface/75 dark:text-neutral-300">
+                                    Difficulté: Moyen
+                                </p>
+                                <div class="flex justify-end mt-4">
+                                    <button
+                                        type="button"
+                                        href="quiz.html"
+                                        class="inline-block rounded bg-[#056EE6] px-4 pb-2 pt-2 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                        data-twe-ripple-init
+                                        data-twe-ripple-color="light">
+                                        Select
+                                    </button>
+                                </div>
+                            </div>
+                            </div> -->
+    
+                            
+                                    </div>
+                                </div>
+                                <div
+                                    class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[twe-tab-active]:block"
+                                    id="pills-profile"
+                                    role="tabpanel"
+                                    aria-labelledby="pills-profile-tab">
+                                    Tab 2 content
+                                </div>
+                                <div
+                                    class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[twe-tab-active]:block"
+                                    id="pills-contact"
+                                    role="tabpanel"
+                                    aria-labelledby="pills-contact-tab">
+                                    Tab 3 content
+                                </div>
+                                <div
+                                    class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[twe-tab-active]:block"
+                                    id="pills-disabled"
+                                    role="tabpanel"
+                                    aria-labelledby="pills-disabled-tab">
+                                    Tab 4 disabled
+                                </div>
+                            </div>
+                        </div> 
+
+                         </div>
+    </section>
+
+
+<footer
+class="flex flex-col items-center mt-20 bg-zinc-50 text-center text-surface dark:bg-neutral-700 dark:text-white">
+<div class="container px-6 pt-6">
+  <div class="mb-6 flex justify-center space-x-2">
+    <a
+      href="#!"
+      type="button"
+      class="rounded-full bg-[#3b5998] p-3 uppercase leading-normal text-white shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 dark:text-white"
+      data-twe-ripple-init
+      data-twe-ripple-color="light">
+      <span class="[&>svg]:h-5 [&>svg]:w-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 320 512">
+          <path
+            d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+        </svg>
+      </span>
+    </a>
+    <a
+      href="#!"
+      type="button"
+      class="rounded-full bg-[#55acee] p-3 uppercase leading-normal text-white shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 dark:text-white"
+      data-twe-ripple-init
+      data-twe-ripple-color="light">
+      <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 512 512">
+         <path
+            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+        </svg>
+      </span>
+    </a>
+    <a
+      href="#!"
+      type="button"
+      class="rounded-full bg-[#dd4b39] p-3 uppercase leading-normal text-white shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 dark:text-white"
+      data-twe-ripple-init
+      data-twe-ripple-color="light">
+      <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 488 512">
+           <path
+            d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
+        </svg>
+      </span>
+    </a>
+    <a
+      href="#!"
+      type="button"
+      class="rounded-full bg-[#ac2bac] p-3 uppercase leading-normal text-white shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 dark:text-white"
+      data-twe-ripple-init
+      data-twe-ripple-color="light">
+      <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 448 512">
+            <path
+            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+        </svg>
+      </span>
+    </a>
+    <a
+      href="#!"
+      type="button"
+      class="rounded-full bg-[#0082ca] p-3 uppercase leading-normal text-white shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 dark:text-white"
+      data-twe-ripple-init
+      data-twe-ripple-color="light">
+      <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 448 512">
+        <path
+            d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+        </svg>
+      </span>
+    </a>
+    <a
+      href="#!"
+      type="button"
+      class="rounded-full bg-[#333333] p-3 uppercase leading-normal text-white shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 dark:text-white"
+      data-twe-ripple-init
+      data-twe-ripple-color="light">
+      <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 496 512">
+          <path
+            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+        </svg>
+      </span>
+    </a>
+  </div>
+</div>
+<div class="w-full bg-[#056EE6] p-4 text-center text-white">
+  © 2024 All Rights Reserved |
+  <a href="https://tw-elements.com/">MassaAlKhayr BadrEddine</a>
+</div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/js/tw-elements.umd.min.js"></script>
+    <script>
+        const quizzes = JSON.parse(localStorage.getItem('quizzes'));
+        const cardsContainer = document.getElementById('cards-container');
+
+        quizzes.forEach(quiz=>{
+            cardsContainer.innerHTML += `<div class="card-quiz flex flex-col mr-20 mb-10  rounded-lg bg-[#292C34] text-white shadow-secondary-1 dark:bg-surface-dark dark:text-white md:max-w-xl md:flex-row">
+                                            <img
+                                                class="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:!rounded-none md:!rounded-s-lg"
+                                                src="images/card-img.svg"
+                                                alt="" />
+                                            <div class="flex flex-col justify-start p-6">
+                                                <h5 class="title mb-2 text-xl font-medium" id="title">${quiz.name}</h5>
+                                                <p class="mb-4 text-base">
+                                                ${quiz.description}
+                                                </p>
+                                                <p class="text-xs text-white/75 dark:text-neutral-300">
+                                                 Questions: ${quiz.questions.length}
+                                                </p>
+                                                <p class="text-xs text-white/75 dark:text-neutral-300">
+                                                    Temp: 5min
+                                                </p>
+                                                <p class="text-xs text-white/75 dark:text-neutral-300">
+                                                 difficulté: ${quiz.Niveau}
+                                                </p>
+                                                <div class="flex justify-end mt-4">
+                                                <a href="quiz.html">
+                                                    <button
+                                                        type="button"
+                                                        href="quiz.html"
+                                                        class="inline-block rounded bg-[#056EE6] px-4 pb-2 pt-2 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                                        data-twe-ripple-init
+                                                        data-twe-ripple-color="light">
+                                                        Select
+                                                    </button>
+                                                </a> 
+                                                </div>
+                                            </div>
+                                            </div>`;
+        });
+
+        
+    </script>
+    <script>
+        const cardquiz = document.querySelectorAll('.card-quiz');
+ 
+         cardquiz.forEach(card => {
+         card.addEventListener('click', function() {
+         const title = card.querySelector('.title').textContent;
+         localStorage.setItem('quiztitle', title);
+ 
+         });
+         });
+     </script>
+</body>
+</html>

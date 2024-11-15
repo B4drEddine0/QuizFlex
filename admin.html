@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/tw-elements/css/tw-elements.min.css" />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            fontFamily: {
+                sans: ["Roboto", "sans-serif"],
+                body: ["Roboto", "sans-serif"],
+                mono: ["ui-monospace", "monospace"],
+                poppins: ['Poppins', 'sans-serif'],
+            },
+        },
+        corePlugins: {
+            preflight: false,
+        },
+    };
+    </script>
+    <title>Home</title>
+</head>
+<body class="font-poppins flex">
+   
+    <nav class="bg-[#056EE6] h-screen sticky top-0 left-0  py-6 font-[sans-serif] overflow-auto">
+        <div class="flex flex-col flex-wrap items-center cursor-pointer px-4" onclick="window.location.href = 'index.html'">
+          <img src='images/logoquizz.svg' class="w-12 h-12 rounded-full border-2 border-white" />
+          <div class="mt-2 text-center">
+            <p class="text-sm text-white mt-2">BadrEddine</p>
+            <p class="text-xs text-gray-300 mt-0.5">Admin</p>
+          </div>
+        </div>
+  
+        <ul class="space-y-8 mt-20">
+          <li>
+            <a href="javascript:void(0)" id="dash-btn" class="text-white text-sm flex flex-col items-center hover:bg-[#0C62C5] rounded px-4 py-5 transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 mb-3" viewBox="0 0 512 512">
+                <path
+                  d="M197.332 170.668h-160C16.746 170.668 0 153.922 0 133.332v-96C0 16.746 16.746 0 37.332 0h160c20.59 0 37.336 16.746 37.336 37.332v96c0 20.59-16.746 37.336-37.336 37.336zM37.332 32A5.336 5.336 0 0 0 32 37.332v96a5.337 5.337 0 0 0 5.332 5.336h160a5.338 5.338 0 0 0 5.336-5.336v-96A5.337 5.337 0 0 0 197.332 32zm160 480h-160C16.746 512 0 495.254 0 474.668v-224c0-20.59 16.746-37.336 37.332-37.336h160c20.59 0 37.336 16.746 37.336 37.336v224c0 20.586-16.746 37.332-37.336 37.332zm-160-266.668A5.337 5.337 0 0 0 32 250.668v224A5.336 5.336 0 0 0 37.332 480h160a5.337 5.337 0 0 0 5.336-5.332v-224a5.338 5.338 0 0 0-5.336-5.336zM474.668 512h-160c-20.59 0-37.336-16.746-37.336-37.332v-96c0-20.59 16.746-37.336 37.336-37.336h160c20.586 0 37.332 16.746 37.332 37.336v96C512 495.254 495.254 512 474.668 512zm-160-138.668a5.338 5.338 0 0 0-5.336 5.336v96a5.337 5.337 0 0 0 5.336 5.332h160a5.336 5.336 0 0 0 5.332-5.332v-96a5.337 5.337 0 0 0-5.332-5.336zm160-74.664h-160c-20.59 0-37.336-16.746-37.336-37.336v-224C277.332 16.746 294.078 0 314.668 0h160C495.254 0 512 16.746 512 37.332v224c0 20.59-16.746 37.336-37.332 37.336zM314.668 32a5.337 5.337 0 0 0-5.336 5.332v224a5.338 5.338 0 0 0 5.336 5.336h160a5.337 5.337 0 0 0 5.332-5.336v-224A5.336 5.336 0 0 0 474.668 32zm0 0"
+                  data-original="#000000" />
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" id="question-btn"
+              class="text-white text-sm flex flex-col items-center hover:bg-[#0C62C5] rounded px-4 py-5 transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 mb-3" viewBox="0 0 511.414 511.414">
+                <path
+                  d="M497.695 108.838a16.002 16.002 0 0 0-9.92-14.8L261.787 1.2a16.003 16.003 0 0 0-12.16 0L23.639 94.038a16 16 0 0 0-9.92 14.8v293.738a16 16 0 0 0 9.92 14.8l225.988 92.838a15.947 15.947 0 0 0 12.14-.001c.193-.064-8.363 3.445 226.008-92.837a16 16 0 0 0 9.92-14.8zm-241.988 76.886-83.268-34.207L352.39 73.016l88.837 36.495zm-209.988-51.67 71.841 29.513v83.264c0 8.836 7.164 16 16 16s16-7.164 16-16v-70.118l90.147 37.033v257.797L45.719 391.851zM255.707 33.297l55.466 22.786-179.951 78.501-61.035-25.074zm16 180.449 193.988-79.692v257.797l-193.988 79.692z"
+                  data-original="#000000" />
+              </svg>
+              <span>Questions</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)"
+              class="text-white text-sm flex flex-col items-center hover:bg-[#0C62C5] rounded px-4 py-5 transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 mb-3" viewBox="0 0 16 16">
+                <path
+                  d="M13 .5H3A2.503 2.503 0 0 0 .5 3v10A2.503 2.503 0 0 0 3 15.5h10a2.503 2.503 0 0 0 2.5-2.5V3A2.503 2.503 0 0 0 13 .5ZM14.5 13a1.502 1.502 0 0 1-1.5 1.5H3A1.502 1.502 0 0 1 1.5 13v-.793l3.5-3.5 1.647 1.647a.5.5 0 0 0 .706 0L10.5 7.207V8a.5.5 0 0 0 1 0V6a.502.502 0 0 0-.5-.5H9a.5.5 0 0 0 0 1h.793L7 9.293 5.354 7.647a.5.5 0 0 0-.707 0L1.5 10.793V3A1.502 1.502 0 0 1 3 1.5h10A1.502 1.502 0 0 1 14.5 3Z"
+                  data-original="#000000" />
+              </svg>
+              <span>Statistiques</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+
+
+    <main class="p-8 w-full">
+        <h3 class="text-gray-700 text-3xl font-medium">Dashboard</h3>
+
+        <div class="bg-gray-200 w-full dark:bg-gray-700 flex justify-center items-center">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:py-10 lg:px-8">
+                <div
+                class="grid grid-cols-2 lg:grid-cols-4 gap-y-5 lg:gap-y-0 gap-x-40 place-items-center w-full mx-auto max-w-7xl px-5">
+                <div
+                  class="flex flex-col justify-center items-center bg-[#FFF6F3] px-4 h-[126px] w-[100%] md:w-[281px] md:h-[192px] rounded-lg justify-self-center">
+                  <div class="flex flex-row justify-center items-center">
+                    <svg class="w-[35px] h-[35px] md:w-[50px] md:h-[50px]" viewBox="0 0 50 50" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M39.37 18.432c0 3.058-.906 5.862-2.466 8.203a14.728 14.728 0 0 1-10.079 6.367c-.717.127-1.455.19-2.214.19-.759 0-1.497-.063-2.214-.19a14.728 14.728 0 0 1-10.078-6.368 14.692 14.692 0 0 1-2.467-8.202c0-8.16 6.6-14.76 14.76-14.76s14.759 6.6 14.759 14.76Z"
+                        stroke="#056EE6" stroke-width="3.473" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path
+                        d="m44.712 38.17-3.431.83a2.063 2.063 0 0 0-1.539 1.572l-.728 3.122c-.09.384-.281.734-.554 1.012a2.068 2.068 0 0 1-.992.564c-.375.09-.768.073-1.134-.052a2.078 2.078 0 0 1-.938-.653l-9.92-11.64-9.92 11.661a2.078 2.078 0 0 1-.938.653 2.038 2.038 0 0 1-1.134.052 2.067 2.067 0 0 1-.992-.563 2.137 2.137 0 0 1-.554-1.012l-.728-3.123a2.13 2.13 0 0 0-.55-1.01 2.06 2.06 0 0 0-.988-.562L6.24 38.19a2.073 2.073 0 0 1-.956-.533 2.14 2.14 0 0 1-.563-.953 2.175 2.175 0 0 1-.015-1.113c.091-.366.276-.7.536-.97l8.11-8.284a14.672 14.672 0 0 0 4.307 4.281 14.34 14.34 0 0 0 5.634 2.134 12.29 12.29 0 0 0 2.183.191c.749 0 1.477-.063 2.184-.19 4.138-.617 7.694-3.017 9.94-6.416l8.11 8.285c1.144 1.147.583 3.165-.998 3.547Zm-18.03-26.532 1.227 2.507c.167.34.603.68.998.743l2.226.383c1.414.233 1.747 1.296.727 2.336l-1.726 1.764c-.29.297-.457.87-.353 1.295l.499 2.188c.395 1.721-.5 2.4-1.996 1.487l-2.08-1.253a1.434 1.434 0 0 0-1.372 0l-2.08 1.253c-1.497.892-2.392.234-1.996-1.487l.499-2.188c.083-.403-.063-.998-.354-1.295l-1.726-1.764c-1.019-1.04-.686-2.081.728-2.336l2.225-.383c.375-.063.811-.403.977-.743l1.227-2.507c.604-1.36 1.685-1.36 2.35 0Z"
+                        stroke="#056EE6" stroke-width="3.473" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">75K+</p>
+                  </div>
+                  <p class="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">Total Participant</p>
+                </div>
+                <div
+                  class="flex flex-col justify-center items-center bg-[#FFF6F3] px-4 h-[126px] w-[100%] md:w-[281px] md:h-[192px] rounded-lg justify-self-center">
+                  <div class="flex flex-row justify-center items-center">
+                    <svg class="w-[35px] h-[35px] md:w-[50px] md:h-[50px]" viewBox="0 0 51 50" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#a)">
+                        <path
+                          d="m26.91 5.776 4.483 10.683a1.544 1.544 0 0 0 1.287.942l11.474.992a1.544 1.544 0 0 1 .876 2.715L36.325 28.7a1.559 1.559 0 0 0-.49 1.523l2.61 11.296a1.544 1.544 0 0 1-2.295 1.677l-9.86-5.982a1.53 1.53 0 0 0-1.59 0l-9.861 5.982a1.544 1.544 0 0 1-2.295-1.677l2.609-11.296a1.56 1.56 0 0 0-.49-1.523l-8.705-7.593a1.544 1.544 0 0 1 .876-2.715l11.474-.992a1.544 1.544 0 0 0 1.287-.942l4.483-10.683a1.544 1.544 0 0 1 2.833 0Z"
+                          stroke="#056EE6" stroke-width="4.341" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </g>
+                      <defs>
+                        <clipPath id="a">
+                          <path fill="#fff" d="M.8.2h49.4v49.4H.8z"></path>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">4900</p>
+                  </div>
+                  <p class="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">Total Quiz</p>
+                </div>
+                <div
+                  class="flex flex-col justify-center items-center bg-[#FFF6F3] px-4 h-[126px] w-[100%] md:w-[281px] md:h-[192px] rounded-lg justify-self-center">
+                  <div class="flex flex-row justify-center items-center">
+                    <svg class="w-[35px] h-[35px] md:w-[50px] md:h-[50px]" viewBox="0 0 50 50" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#a)" stroke="#056EE6" stroke-width="3.473" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M10.811 39.091c-1.775-1.775-.598-5.505-1.5-7.69-.939-2.255-4.377-4.089-4.377-6.5 0-2.413 3.438-4.246 4.376-6.502.903-2.182-.274-5.914 1.501-7.69 1.776-1.775 5.508-.598 7.69-1.5 2.266-.939 4.09-4.377 6.501-4.377 2.412 0 4.246 3.438 6.501 4.376 2.185.903 5.915-.274 7.69 1.501 1.776 1.776.598 5.506 1.502 7.69.937 2.266 4.376 4.09 4.376 6.501 0 2.412-3.439 4.246-4.377 6.501-.903 2.185.274 5.915-1.5 7.69-1.776 1.776-5.506.598-7.69 1.501-2.256.938-4.09 4.377-6.502 4.377s-4.245-3.439-6.5-4.377c-2.183-.903-5.915.275-7.69-1.5Z">
+                        </path>
+                        <path d="m17.281 26.444 4.632 4.631L32.718 20.27"></path>
+                      </g>
+                      <defs>
+                        <clipPath id="a">
+                          <path fill="#fff" d="M.3.2h49.4v49.4H.3z"></path>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">2900+</p>
+                  </div>
+                  <p class="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">Actif Quizes</p>
+                </div>
+                <div
+                  class="flex flex-col justify-center items-center bg-[#FFF6F3] px-4 h-[126px] w-[100%] md:w-[281px] md:h-[192px] rounded-lg justify-self-center">
+                  <div class="flex flex-row justify-center items-center">
+                    <svg class="w-[35px] h-[35px] md:w-[50px] md:h-[50px]" viewBox="0 0 51 50" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M45.571 12.006 27.046 30.531l-7.719-7.718L5.434 36.706" stroke="#056EE6" stroke-width="4.341"
+                        stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M45.569 24.356v-12.35h-12.35" stroke="#056EE6" stroke-width="4.341" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                    <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">1.5M+</p>
+                  </div>
+                  <p class="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">Total Users</p>
+                </div>
+              </div>
+            </div>
+        </div>
+
+    <div class="mt-8">
+        
+    </div>
+
+        <!--ssssssssssssssssssssssssssss-->
+        <div class="text-gray-900 bg-gray-200" id="quiz-content">
+            <div class="p-4 flex justify-between">
+                <h1 class="text-3xl">Quizes</h1>
+                <div class="flex justify-end">
+                    <button
+                    type="button"
+                    data-twe-ripple-init
+                    data-twe-ripple-color="light"
+                    id="openAddForm"
+                    class="me-3 inline-block rounded bg-[#056EE6] px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-lg focus:bg-primary-accent-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-md dark:shadow-black/30 dark:hover:shadow-lg dark:focus:shadow-lg dark:active:shadow-lg">
+                    Add Quiz
+                    </button>
+                </div>
+            </div>
+            <div class="px-3 py-4 flex justify-center">
+                <table class="w-full text-md bg-white shadow-md rounded mb-4">
+                    <tbody class="quizContainer">
+                        <tr class="border-b">
+                            <th class="text-left p-3 px-5">Name</th>
+                            <th class="text-left p-3 px-5">Catégorie</th>
+                            <th class="text-left p-3 px-5">Statut</th>
+                            <th></th>
+                        </tr>
+                        
+                        
+                    </tbody>
+                </table>
+        
+            </div>
+        </div>
+        <!---->
+        <div id="AddFormModal" class="fixed z-10 inset-0 overflow-y-auto hidden">
+            <div class="flex items-center justify-center min-h-screen">
+                <div class="bg-white w-1/2 p-6 rounded shadow-md">
+                    <div class="flex justify-end">
+                    
+                        <button id="closeAddForm" class="text-gray-700 hover:text-red-500">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4 text-[#056EE6]">Add Quiz</h2>
+    
+                <form id="quizForm" method="post">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Titre De Quiz</label>
+                            <input type="text" id="titre" name="name"
+                                   class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="Catégorie" class="block text-gray-700 text-sm font-bold mb-2">Catégorie</label>
+                            <input type="text" id="catégorie" name="catégorie"
+                                   class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
+                            <textarea id="description" name="description"
+                                      class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500"></textarea>
+                        </div>
+                        <div class="flex  gap-x-10">
+                            <div class="mb-4">
+                                <label for="Niveau" class="block text-gray-700 text-sm font-bold mb-2">Niveau</label>
+                                <select name="Niveau" value="quiz.Niveau" class="bg-transparent border-b-2 border-gray-300 py-2">
+                                    <option value="Facile">Facile</option>
+                                    <option value="Moyen">Moyen</option>
+                                    <option value="Difficile">Difficile</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="Statut" class="block text-gray-700 text-sm font-bold mb-2">Statut</label>
+                                <select name="statut" value="quiz.statut" id="statut" class="bg-transparent border-b-2 border-gray-300 py-2">
+                                    <option value="Actif">Actif</option>
+                                    <option value="Inactif">Inactif</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit"
+                                class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">
+                            Add
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!---->
+        <div class="text-gray-900 bg-gray-200 hidden" id="question-content">
+            <div class="p-4 flex justify-between">
+                <h1 class="text-3xl">Questions</h1>
+                <div class="flex justify-end">
+                    <button
+                    type="button"
+                    data-twe-ripple-init
+                    data-twe-ripple-color="light"
+                    id="openQuestionForm"
+                    class="me-3 inline-block rounded bg-[#056EE6] px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-lg focus:bg-primary-accent-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-md dark:shadow-black/30 dark:hover:shadow-lg dark:focus:shadow-lg dark:active:shadow-lg">
+                    Add Questions
+                    </button>
+                    <button
+                    type="button"
+                    data-twe-ripple-init
+                    data-twe-ripple-color="light"
+                    id="retour"
+                    class="me-3 inline-block rounded bg-green-700 px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-lg focus:bg-primary-accent-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-md dark:shadow-black/30 dark:hover:shadow-lg dark:focus:shadow-lg dark:active:shadow-lg">
+                    Import
+                    </button>
+                    <button
+                    type="button"
+                    data-twe-ripple-init
+                    data-twe-ripple-color="light"
+                    class="me-3 inline-block rounded bg-red-700 px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-lg focus:bg-primary-accent-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-md dark:shadow-black/30 dark:hover:shadow-lg dark:focus:shadow-lg dark:active:shadow-lg">
+                    Export
+                    </button>
+                </div>
+            </div>
+            <div class="px-3 py-4 flex justify-center">
+                <table class="w-full text-md bg-white shadow-md rounded mb-4">
+                    <tbody class="questionsContainer">
+                        <tr class="border-b">
+                            <th class="text-left p-3 px-5">Quiz Associé</th>
+                            <th class="text-left p-3 px-5">Question Type</th>
+                            <th class="text-left p-3 px-5">Niveau</th>
+                        </tr>
+                        
+                        
+                    </tbody>
+                </table>
+        
+            </div>
+        </div>
+        <!---->
+        <div id="AddQuestionModal" class="fixed z-10 inset-0 overflow-y-auto hidden">
+            <div class="flex items-center justify-center min-h-screen">
+                <div class="bg-white w-1/2 p-6 rounded shadow-md">
+                    <div class="flex justify-end">
+                    
+                        <button id="closeQuestionForm" class="text-gray-700 hover:text-red-500">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4 text-[#056EE6]">Add Question</h2>
+    
+                    <form id="questionForm" method="post">
+                        <div class="mb-4">
+                            <label for="QuizTitre" class="block text-gray-700 text-sm font-bold mb-2">Quiz associé</label>
+                            <input type="text" id="QuizTitre" name="QuizTitre" class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="type" class="block text-gray-700 text-sm font-bold mb-2">Type De Question</label>
+                            <select id="type" name="type" class="bg-transparent border-b-2 border-gray-300 py-2">
+                                <option value="" disabled selected>Select a type</option>
+                                <option value="QCM">QCM</option>
+                                <option value="Vrai/Faux">Vrai/Faux</option>
+                                <option value="Textuelle">Textuelle</option>
+                            </select>
+                        </div>
+                    
+                        <!-- QCM  -->
+                        <div class="QCM">
+                            <div class="mb-4">
+                                <label for="question-qcm" class="block text-gray-700 text-sm font-bold mb-2">Question</label>
+                                <input type="text" id="question-qcm" name="Question" class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="options" class="block text-gray-700 text-sm font-bold mb-2">Options</label>
+                                <textarea id="options" name="options" class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500"></textarea>
+                            </div>
+                    
+                            <div class="mb-4">
+                                <label for="answer-qcm" class="block text-gray-700 text-sm font-bold mb-2">Correct Answer</label>
+                                <input type="text" id="answer-qcm" name="Correct Answer" class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                    
+                            <div class="mb-4">
+                                <label for="explanation-qcm" class="block text-gray-700 text-sm font-bold mb-2">Explanation</label>
+                                <textarea id="explanation-qcm" name="Explanation" class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500"></textarea>
+                            </div>
+                        </div>
+                    
+                        <!-- Vrai/Faux  -->
+                        <div class="vf-content">
+                            <div class="mb-4">
+                                <label for="question-vf" class="block text-gray-700 text-sm font-bold mb-2">Question</label>
+                                <input type="text" id="question-vf" name="Question" class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                    
+                            <div class="mb-4">
+                                <label for="answer-vf" class="block text-gray-700 text-sm font-bold mb-2">Correct Answer</label>
+                                <input type="text" id="answer-vf" name="Correct Answer" data-type="vrai-faux" class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                    
+                            <div class="mb-4">
+                                <label for="explanation-vf" class="block text-gray-700 text-sm font-bold mb-2">Explanation</label>
+                                <textarea id="explanation-vf" name="Explanation" class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500"></textarea>
+                            </div>
+                        </div>
+                    
+                        <!-- Textuelle  -->
+                        <div class="Textuelle">
+                            <div class="mb-4">
+                                <label for="question-textuelle" class="block text-gray-700 text-sm font-bold mb-2">Question</label>
+                                <input type="text" id="question-textuelle" name="Question" class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                    
+                            <div class="mb-4">
+                                <label for="answer-textuelle" class="block text-gray-700 text-sm font-bold mb-2">Correct Answer</label>
+                                <textarea id="answer-textuelle" name="Correct Answer" data-type="textuelle" class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500"></textarea>
+                            </div>
+                    
+                            <div class="mb-4">
+                                <label for="explanation-textuelle" class="block text-gray-700 text-sm font-bold mb-2">Explanation</label>
+                                <textarea id="explanation-textuelle" name="Explanation" class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500"></textarea>
+                            </div>
+                        </div>
+                    
+                        <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">
+                            Add
+                        </button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+
+
+        
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/js/tw-elements.umd.min.js"></script>
+    <script defer>
+
+        const openAddFormButton = document.getElementById('openAddForm');
+        const closeAddFormButton = document.getElementById('closeAddForm');
+        const AddFormModal = document.getElementById('AddFormModal');
+        const editBtn = document.getElementById('editBtn');
+        const openQuestionBtn = document.getElementById('openQuestionForm');
+        const closeQuestionBtn = document.getElementById('closeQuestionForm');
+        const AddQuestionModal = document.getElementById('AddQuestionModal');
+        const editQuestionBtn = document.getElementById('editQuestionBtn');
+        const dashBtn = document.getElementById('dash-btn');
+        const questionBtn = document.getElementById('question-btn');
+        const quizContent = document.getElementById('quiz-content');
+        const questionContent = document.getElementById('question-content');
+        const qcmFields = document.querySelector('.QCM');
+        const vfFields = document.querySelector('.vf-content');
+        const textuelleFields = document.querySelector('.Textuelle');
+        
+        openAddFormButton.addEventListener('click', () => {
+            AddFormModal.classList.remove('hidden');
+        });
+
+        qcmFields.style.display = 'none';
+        vfFields.style.display = 'none';
+        textuelleFields.style.display = 'none';
+        document.getElementById('type').addEventListener('change', function() {
+  
+            qcmFields.style.display = 'none';
+            vfFields.style.display = 'none';
+            textuelleFields.style.display = 'none';
+
+            if (this.value === 'QCM') {
+                qcmFields.style.display = 'block';
+            } else if (this.value === 'Vrai/Faux') {
+                vfFields.style.display = 'block';
+            } else if (this.value === 'Textuelle') {
+                textuelleFields.style.display = 'block';
+            }
+    });
+       
+    
+        closeAddFormButton.addEventListener('click', () => {
+            AddFormModal.classList.add('hidden');
+        });
+
+        
+
+        openQuestionBtn.addEventListener('click', () => {
+            AddQuestionModal.classList.remove('hidden');
+        });
+       
+    
+        closeQuestionBtn.addEventListener('click', () => {
+            AddQuestionModal.classList.add('hidden');
+        });
+
+        dashBtn.addEventListener('click',()=>{
+            dashBtn.style.backgroundColor= '#0C62C5';
+            questionBtn.style.backgroundColor='';
+            quizContent.classList.remove('hidden');
+            questionContent.classList.add('hidden');
+
+        });
+        questionBtn.addEventListener('click',()=>{
+            questionBtn.style.backgroundColor='#0C62C5';
+            dashBtn.style.backgroundColor='';
+            quizContent.classList.add('hidden');
+            questionContent.classList.remove('hidden');
+        })
+    
+        // editBtn.addEventListener('click', () => {
+        //     AddFormModal.classList.remove('hidden');
+        // });
+
+        // editQuestionBtn.addEventListener('click', () => {
+        //     AddQuestionModal.classList.remove('hidden');
+        // });
+        </script>
+    <script>
+       const cardquiz = document.querySelectorAll('.card-quiz');
+
+        cardquiz.forEach(card => {
+        card.addEventListener('click', function() {
+        const title = card.getAttribute('data-title');
+        localStorage.setItem('quiztitle', title);
+
+        window.location.href = 'quiz.html';
+        });
+        });
+    </script>
+    <script src="admin.js"></script>
+</body>
+</html>
