@@ -5,6 +5,7 @@ const categorie = document.getElementById('catégorie');
 const statut = document.getElementById('statut');
 const quizContainer = document.querySelector('.quizContainer');
 const questionsContainer = document.querySelector('.questionsContainer');
+const quizSelect = document.getElementById('QuizTitre');
 
 
 
@@ -52,6 +53,11 @@ window.addEventListener('load', () => {
                     </td>
                 </tr>`;
         });
+
+        const option = document.createElement('option');
+        option.value = quiz.name;
+        option.textContent = quiz.name;
+        quizSelect.appendChild(option);
     });
 });
 
@@ -83,6 +89,10 @@ quizForm.addEventListener('submit', (e) => {
                 <button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
             </td>
         </tr>`;
+    const option = document.createElement('option');
+    option.value = data.name; 
+    option.textContent = data.name;
+    quizSelect.appendChild(option);
 
     localStorage.setItem('quizzes', JSON.stringify(quizzes));
 

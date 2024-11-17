@@ -149,10 +149,8 @@ quizzes.forEach((card, index) => {
          IncorrectQsDet = card.questions[i].Explanation;
          correctQs = card.questions[i].Question;
          correctQsDet = card.questions[i].Explanation;
-        i++;
-        counterQ++;
-      
         
+
 
         radioInputs.forEach((radio, index) => {
           const parentDiv = parentDivs[index];
@@ -164,11 +162,13 @@ quizzes.forEach((card, index) => {
             if (radio.checked) {
             if (index == correctAnswerIndex) {
               parentDiv.style.backgroundColor = 'green';
+              parentDivs[index].querySelector('label').style.color = 'white';
               addcorrect(correctQs,correctQsDet);
               addScore();
               
             } else {
               parentDiv.style.backgroundColor = 'red';
+              parentDivs[index].querySelector('label').style.color = 'white';
               addIncorrect(IncorrectQs,IncorrectQsDet);
                setTimeout(()=>{
                 detailsdiv.style.display = 'block';
@@ -177,95 +177,105 @@ quizzes.forEach((card, index) => {
             }
             } 
               parentDivs[correctAnswerIndex].style.backgroundColor = 'green';
+              parentDivs[correctAnswerIndex].querySelector('label').style.color = 'white';
            }
 
-            
-           if (vfdiv.style.display == 'block'){
-            trueBtn.addEventListener('click', ()=>{
-              if (correctAnswerIndex === 'true') {
-                trueBtn.style.backgroundColor = "green";
-                falseBtn.style.backgroundColor = ""; 
-                addcorrect(correctQs,correctQsDet);
-                addScore();
-              } else {
-                trueBtn.style.backgroundColor = "red"; 
-                falseBtn.style.backgroundColor = "green";
-
-                addIncorrect(IncorrectQs,IncorrectQsDet);
-                setTimeout(()=>{
-                  detailsdiv.style.display = 'block';
-                 },1000);
-              }
-              trueBtn.disabled = true;
-              falseBtn.disabled = true;
-            })
-      
-            falseBtn.addEventListener('click',()=> {
-              if (correctAnswerIndex === 'false') {
-                falseBtn.style.backgroundColor = "green"; 
-                trueBtn.style.backgroundColor = ""; 
-                addcorrect(correctQs,correctQsDet);
-                addScore();
-              } else {
-                falseBtn.style.backgroundColor = "red";
-                trueBtn.style.backgroundColor = "green";
-
-                addIncorrect(IncorrectQs,IncorrectQsDet);
-                
-
-                setTimeout(()=>{
-                  detailsdiv.style.display = 'block';
-                 },1000);
-              }
-              trueBtn.disabled = true;
-              falseBtn.disabled = true;
-            })
-          }
-
-          if (textdiv.style.display == 'block'){ 
-            if(correctAnswerIndex.map(answer => answer.toLowerCase()).includes(userInput.value.toLowerCase())){
-              userInput.style.backgroundColor = 'green'
-              addcorrect(correctQs,correctQsDet);
-              addScore();
-            }else{
-              userInput.style.backgroundColor = 'red';
-
-              addIncorrect(IncorrectQs,IncorrectQsDet);
-
-              setTimeout(()=>{
-                detailsdiv.style.display = 'block';
-               },1000);
-            }
-          }
-           
-          submitBtn.disabled = true;
-          
-          setTimeout(()=>{
+           setTimeout(()=>{
             parentDiv.style.backgroundColor = '';
+            parentDivs[index].querySelector('label').style.color = '';
             radio.checked = false;
-            falseBtn.style.backgroundColor = ""; 
-            trueBtn.style.backgroundColor = ""; 
-            userInput.style.backgroundColor = '';
-            userInput.textContent = '';
-            detailsdiv.style.display = 'none';
-            submitBtn.disabled = false;
-            trueBtn.disabled = false;
-            falseBtn.disabled = false;
-            if(i==card.questions.length){
-                  clearInterval(timetotal);
-                  qcmdiv.style.display = "none";
-                  vfdiv.style.display = "none";
-                  textdiv.style.display = "none";
-                  scoreBar.style.display = "none";
-                  typeBar.style.display = "none";
-                  questionTitre.style.display= "none";
-                  BtmQuiz.style.display = "none";
-                  Pourcentage.textContent = (bonneReponse*100)/QuestionCount.textContent;
-                  resultatdiv.style.display = "block";
-            }
-          },5000);
+           },5000)
 
         });
+
+         
+        if (vfdiv.style.display === 'block') {
+          trueBtn.addEventListener('click', () => {
+            if (questionAnswered) return;
+              if (card.questions[i].CorrectAnswer.trim() == 'true') {
+                  trueBtn.style.backgroundColor = "green";
+                  addcorrect(correctQs, correctQsDet);
+                  addScore();
+              } else {
+                  trueBtn.style.backgroundColor = "red";
+                  falseBtn.style.backgroundColor = "green";
+                  addIncorrect(IncorrectQs, IncorrectQsDet);
+                  setTimeout(() => {
+                      detailsdiv.style.display = 'block';
+                  }, 1000);
+              }
+      
+              trueBtn.disabled = true;
+              falseBtn.disabled = true;
+              questionAnswered = true;
+          });
+      
+          falseBtn.addEventListener('click', () => {
+            if (card.questions[i].CorrectAnswer.trim() === 'false') {
+                falseBtn.style.backgroundColor = "green";
+                addcorrect(correctQs, correctQsDet);
+                addScore();
+            } else {
+                falseBtn.style.backgroundColor = "red";
+                trueBtn.style.backgroundColor = "green";
+                addIncorrect(IncorrectQs, IncorrectQsDet);
+                setTimeout(() => {
+                    detailsdiv.style.display = 'block';
+                }, 1000);
+            }
+    
+            
+            trueBtn.disabled = true;
+            falseBtn.disabled = true;
+        });
+      }
+      
+
+        if (textdiv.style.display == 'block'){ 
+          if(correctAnswerIndex.map(answer => answer.toLowerCase()).includes(userInput.value.toLowerCase())){
+            userInput.style.backgroundColor = 'green'
+            userInput.style.Color = 'white !important';
+            addcorrect(correctQs,correctQsDet);
+            addScore();
+          }else{
+            userInput.style.backgroundColor = 'red';
+            userInput.style.Color = 'white';
+            addIncorrect(IncorrectQs,IncorrectQsDet);
+
+            setTimeout(()=>{
+              detailsdiv.style.display = 'block';
+             },1000);
+          }
+        }
+          
+        submitBtn.disabled = true;
+        resetState();
+        setTimeout(()=>{
+          i++;
+          counterQ++;
+          parentDivs[index].querySelector('label').style.color = '';
+          userInput.style.Color = '';
+          falseBtn.style.backgroundColor = ""; 
+          trueBtn.style.backgroundColor = ""; 
+          userInput.style.backgroundColor = '';
+          userInput.value = '';
+          detailsdiv.style.display = 'none';
+          submitBtn.disabled = false;
+          trueBtn.disabled = false;
+          falseBtn.disabled = false;
+          if(i==card.questions.length){
+                clearInterval(timetotal);
+                qcmdiv.style.display = "none";
+                vfdiv.style.display = "none";
+                textdiv.style.display = "none";
+                scoreBar.style.display = "none";
+                typeBar.style.display = "none";
+                questionTitre.style.display= "none";
+                BtmQuiz.style.display = "none";
+                Pourcentage.textContent = (bonneReponse*100)/QuestionCount.textContent;
+                resultatdiv.style.display = "block";
+          }
+        },5000);
 
 
         
@@ -335,3 +345,9 @@ again.addEventListener('click',()=>{
 retour.addEventListener('click',()=>{
   window.location.href='index.html';
 })
+
+function resetState() {
+  questionAnswered = false;
+  questioncorrect = false;
+  questionIncorrect = false;
+}
